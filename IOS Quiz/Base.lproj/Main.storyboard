@@ -1,21 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="IOS_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wST-A3-LM7">
+                                <rect key="frame" x="171.5" y="443" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="klV-UZ-7d9"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="92m-vR-yR9">
+                                <rect key="frame" x="162" y="523" width="51" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWU-OL-0VF">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                        <state key="normal" title="Answer"/>
+                                        <connections>
+                                            <action selector="previousButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="ELj-Ta-uGH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUU-bA-u8C">
+                                <rect key="frame" x="170" y="313" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="vsx-lR-6o0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqJ-pg-YcW">
+                                <rect key="frame" x="25" y="284" width="325" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-It-A5X">
+                                <rect key="frame" x="25" y="70" width="325" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="92m-vR-yR9" firstAttribute="top" secondItem="wST-A3-LM7" secondAttribute="bottom" constant="50" id="1a4-dh-Ibx"/>
+                            <constraint firstItem="qUU-bA-u8C" firstAttribute="top" secondItem="qSM-It-A5X" secondAttribute="bottom" constant="225" id="1o6-ij-Zhx"/>
+                            <constraint firstItem="qSM-It-A5X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="4c5-ja-phc"/>
+                            <constraint firstItem="iqJ-pg-YcW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="9kz-TG-php"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iqJ-pg-YcW" secondAttribute="trailing" constant="25" id="FFI-4m-0H4"/>
+                            <constraint firstItem="92m-vR-yR9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PJo-MU-q5I"/>
+                            <constraint firstItem="wST-A3-LM7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dgM-ep-UKJ"/>
+                            <constraint firstItem="iqJ-pg-YcW" firstAttribute="top" secondItem="qSM-It-A5X" secondAttribute="bottom" constant="196" id="eUX-cS-kkN"/>
+                            <constraint firstItem="wST-A3-LM7" firstAttribute="top" secondItem="qUU-bA-u8C" secondAttribute="bottom" constant="100" id="pdc-5o-6zQ"/>
+                            <constraint firstItem="qSM-It-A5X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="qYz-6H-ZpB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qSM-It-A5X" secondAttribute="trailing" constant="25" id="wcw-k2-US2"/>
+                            <constraint firstItem="qUU-bA-u8C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zai-wv-FyZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="iqJ-pg-YcW" id="qxf-KN-5gb"/>
+                        <outlet property="nextButton" destination="wST-A3-LM7" id="WIz-Kf-5yV"/>
+                        <outlet property="previousButton" destination="TWU-OL-0VF" id="ap6-DO-FFt"/>
+                        <outlet property="questionLabel" destination="qSM-It-A5X" id="bPe-h6-Fof"/>
+                        <outlet property="startButton" destination="qUU-bA-u8C" id="b6z-Fy-NIK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
